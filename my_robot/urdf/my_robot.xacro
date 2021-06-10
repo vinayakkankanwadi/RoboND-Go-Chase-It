@@ -200,16 +200,16 @@
   </joint>
 
   <gazebo reference="left_wheel">
-    <material>Gazebo/Green</material>
+    <material>Gazebo/Black</material>
   </gazebo>
   <gazebo reference="right_wheel">
-    <material>Gazebo/Green</material>
+    <material>Gazebo/Black</material>
   </gazebo>
   <gazebo reference="chassis">
-    <material>Gazebo/Blue</material>
+    <material>Gazebo/Green</material>
   </gazebo>
   <gazebo reference="camera">
-    <material>Gazebo/Red</material>
+    <material>Gazebo/Grey</material>
   </gazebo>
 
 </robot>
