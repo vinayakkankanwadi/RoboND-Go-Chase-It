@@ -28,108 +28,129 @@
     <collision name='collision'>
       <origin xyz="0 0 0" rpy=" 0 0 0"/> 
       <geometry>
-        <box size=".4 .2 .1"/>
+        <box size=".5 .4 .2"/>
       </geometry>
     </collision>
 
     <visual name='chassis_visual'>
       <origin xyz="0 0 0" rpy=" 0 0 0"/>
       <geometry>
-        <box size=".4 .2 .1"/>
-      </geometry>
-    </visual>
-
-
-    <collision name='back_caster_collision'>
-      <origin xyz="-0.15 0 -0.05" rpy=" 0 0 0"/>
-      <geometry>
-        <sphere radius="0.0499"/>
-      </geometry>
-    </collision>
-
-    <visual name='back_caster_visual'>
-      <origin xyz="-0.15 0 -0.05" rpy=" 0 0 0"/>
-      <geometry>
-        <sphere radius="0.05"/>
-      </geometry>
-    </visual>
-
-    <collision name='front_caster_collision'>
-      <origin xyz="0.15 0 -0.05" rpy=" 0 0 0"/>
-      <geometry>
-        <sphere radius="0.0499"/>
-      </geometry>
-    </collision>
-
-    <visual name='front_caster_visual'>
-      <origin xyz="0.15 0 -0.05" rpy=" 0 0 0"/>
-      <geometry>
-        <sphere radius="0.05"/>
+        <box size=".5 .4 .2"/>
       </geometry>
     </visual>
 
   </link>
 
-  <link name='left_wheel'>
+  <link name='front_left_wheel'>
     <collision>
-      <origin xyz="0 0 0" rpy="0 1.5707 1.5707"/>
+      <origin xyz='0 0 0' rpy='-1.57079 0 0'/>
       <geometry>
-        <cylinder radius="0.1" length="0.05"/>
+        <cylinder radius='0.1651' length='0.1143'/>
       </geometry>
     </collision>
     <visual>
-      <origin xyz="0 0 0" rpy="0 1.5707 1.5707"/>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <cylinder radius="0.1" length="0.05"/>
+        <mesh filename="package://my_robot/meshes/wheel.dae" scale='0.75 0.75 0.75'/>
       </geometry>
     </visual>
     <inertial>
-      <mass value="5"/>
-      <origin xyz="0 0 0" rpy="0 1.5707 1.5707"/>
-      <inertia
-          ixx="0.1" ixy="0" ixz="0"
-          iyy="0.1" iyz="0"
-          izz="0.1"
-      />
+      <origin xyz='0 0 0' rpy='0 -0 0'/>
+      <mass value='2.637'/>
+      <inertia ixx='0.02467' ixy='0' ixz='0' iyy='0.04411' iyz='0' izz='0.02467'/>
     </inertial>
   </link>
 
-  <link name='right_wheel'>
+  <link name='front_right_wheel'>
     <collision>
-      <origin xyz="0 0 0" rpy="0 1.5707 1.5707"/>
+      <origin xyz='0 0 0' rpy='-1.57079 0 0'/>
       <geometry>
-        <cylinder radius="0.1" length="0.05"/>
+        <cylinder radius='0.1651' length='0.1143'/>
       </geometry>
     </collision>
     <visual>
-      <origin xyz="0 0 0" rpy="0 1.5707 1.5707"/>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <cylinder radius="0.1" length="0.05"/>
+        <mesh filename="package://my_robot/meshes/wheel.dae" scale='0.75 0.75 0.75'/>
       </geometry>
     </visual>
     <inertial>
-      <mass value="5"/>
-      <origin xyz="0 0 0" rpy="0 1.5707 1.5707"/>
-      <inertia
-          ixx="0.1" ixy="0" ixz="0"
-          iyy="0.1" iyz="0"
-          izz="0.1"
-      />
+      <origin xyz='0 0 0' rpy='0 -0 0'/>
+      <mass value='2.637'/>
+      <inertia ixx='0.02467' ixy='0' ixz='0' iyy='0.04411' iyz='0' izz='0.02467'/>
     </inertial>
   </link>
 
-  <joint type="continuous" name="left_wheel_hinge">
-    <origin xyz="0 0.15 0" rpy="0 0 0"/>
-    <child link="left_wheel"/>
+  <link name='back_left_wheel'>
+    <collision>
+      <origin xyz='0 0 0' rpy='-1.57079 0 0'/>
+      <geometry>
+        <cylinder radius='0.1651' length='0.1143'/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://my_robot/meshes/wheel.dae" scale='0.75 0.75 0.75'/>
+      </geometry>
+    </visual>
+    <inertial>
+      <origin xyz='0 0 0' rpy='0 -0 0'/>
+      <mass value='2.637'/>
+      <inertia ixx='0.02467' ixy='0' ixz='0' iyy='0.04411' iyz='0' izz='0.02467'/>
+    </inertial>
+  </link>
+
+  <link name='back_right_wheel'>
+    <collision>
+      <origin xyz='0 0 0' rpy='-1.57079 0 0'/>
+      <geometry>
+        <cylinder radius='0.1651' length='0.1143'/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://my_robot/meshes/wheel.dae" scale='0.75 0.75 0.75'/>
+      </geometry>
+    </visual>
+    <inertial>
+      <origin xyz='0 0 0' rpy='0 -0 0'/>
+      <mass value='2.637'/>
+      <inertia ixx='0.02467' ixy='0' ixz='0' iyy='0.04411' iyz='0' izz='0.02467'/>
+    </inertial>
+  </link>
+
+  <joint type="continuous" name="front_left_wheel_hinge">
+    <origin xyz="0.2 0.25 0" rpy="0 0 0"/>
+    <child link="front_left_wheel"/>
     <parent link="chassis"/>
     <axis xyz="0 1 0" rpy="0 0 0"/>
     <limit effort="10000" velocity="1000"/>
     <dynamics damping="1.0" friction="1.0"/>
   </joint>
 
-  <joint type="continuous" name="right_wheel_hinge">
-    <origin xyz="0 -0.15 0" rpy="0 0 0"/>
-    <child link="right_wheel"/>
+  <joint type="continuous" name="front_right_wheel_hinge">
+    <origin xyz="0.2 -0.25 0" rpy="0 0 0"/>
+    <child link="front_right_wheel"/>
+    <parent link="chassis"/>
+    <axis xyz="0 1 0" rpy="0 0 0"/>
+    <limit effort="10000" velocity="1000"/>
+    <dynamics damping="1.0" friction="1.0"/>
+  </joint>
+
+  <joint type="continuous" name="rear_left_wheel_hinge">
+    <origin xyz="-0.2 0.255555 0" rpy="0 0 0"/>
+    <child link="back_left_wheel"/>
+    <parent link="chassis"/>
+    <axis xyz="0 1 0" rpy="0 0 0"/>
+    <limit effort="10000" velocity="1000"/>
+    <dynamics damping="1.0" friction="1.0"/>
+  </joint>
+
+  <joint type="continuous" name="rear_right_wheel_hinge">
+    <origin xyz="-0.2 -0.25 0" rpy="0 0 0"/>
+    <child link="back_right_wheel"/>
     <parent link="chassis"/>
     <axis xyz="0 1 0" rpy="0 0 0"/>
     <limit effort="10000" velocity="1000"/>
@@ -156,14 +177,14 @@
     <visual>
      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <box  size="0.05 0.05 0.05"/>
+        <mesh filename="package://my_robot/meshes/realsense.dae" />
       </geometry>
     </visual>
   </link>
 
   <joint type="fixed" name="camera_joint">
     <axis xyz="0 1 0"/>
-    <origin xyz="0.2 0 0" rpy="0 0 0" />
+    <origin xyz="0.25 0 0" rpy="0 0 0" />
     <parent link="chassis" />
     <child link="camera" />
   </joint>
@@ -194,22 +215,22 @@
 
   <joint type="fixed" name="hokuyo_joint">
     <axis xyz="0 1 0"/>
-    <origin xyz="0.15 0 .1" rpy="0 0 0" />
+    <origin xyz="0 0 0.14" rpy="0 0 0" />
     <parent link="chassis" />
     <child link="hokuyo" />
   </joint>
 
-  <gazebo reference="left_wheel">
+  <!--<gazebo reference="left_wheel">
     <material>Gazebo/Black</material>
   </gazebo>
   <gazebo reference="right_wheel">
     <material>Gazebo/Black</material>
   </gazebo>
-  <gazebo reference="chassis">
-    <material>Gazebo/Green</material>
-  </gazebo>
   <gazebo reference="camera">
     <material>Gazebo/Grey</material>
+  </gazebo>-->
+  <gazebo reference="chassis">
+    <material>Gazebo/Green</material>
   </gazebo>
 
 </robot>
