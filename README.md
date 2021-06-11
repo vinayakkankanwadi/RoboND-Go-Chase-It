@@ -85,6 +85,10 @@ $ roslaunch ball_chaser ball_chaser.launch
 
 move the white ball in front of the robot and have fun.
 
+### Output
+The Welcome world message and the robot inside a Gazebo World should both launch as follow: 
+![alt text](https://github.com/vinayakkankanwadi/RoboND-Go-Chase-It/blob/main/images/output.png)
+
 
 # License
 MIT license
